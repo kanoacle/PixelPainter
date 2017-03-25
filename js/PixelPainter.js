@@ -13,7 +13,14 @@ border.appendChild(btns);
 for (var i = 0; i < gridNum; i++) {
   var button = document.createElement('DIV');
 }
-grid.onclick('click, function');
+
+btns.onclick = (function() {
+  selected = btns.style.backgroundColor;
+});
+
+grid.onclick = (function() {
+  grid.style.backgroundColor = selected;
+});
 
 //styling
 border.onload = (function() {
@@ -53,5 +60,5 @@ btns.onload = (function() {
   btns.style.position = 'relative';
   btns.style.left = '5%';
   btns.style.top = '12%';
-  btns.style.backgroundColor = 'rgba(128, 20, 128, 0.25)';
+  btns.style.backgroundColor = 'red';
 })();
