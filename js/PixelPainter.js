@@ -1,3 +1,4 @@
+
 //creating elements
 var border = document.getElementById('pixelPainter');
 var grid = document.createElement('DIV');
@@ -60,5 +61,4 @@ btns.onload = (function() {
   btns.style.position = 'relative';
   btns.style.left = '5%';
   btns.style.top = '12%';
-  btns.style.backgroundColor = 'red';
 })();
