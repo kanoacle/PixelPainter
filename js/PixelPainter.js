@@ -50,45 +50,6 @@ for (var c = 0; c < colorNum; c++) {
   colors.appendChild(color);
 }
 
-//codes for buttons
-btns.appendChild(erase);
-btns.appendChild(clear);
-
-erase.innerHTML = 'erase';
-erase.style.fontWeight = '700';
-erase.style.width = '100%';
-erase.style.height = '35%';
-erase.style.lineHeight = '35%';
-erase.style.border = '3px solid #333';
-erase.style.borderRadius = '20px';
-erase.style.margin = '25px 0';
-erase.style.fontSize = '72px';
-erase.style.fontFamily = 'Capriola';
-erase.style.outline = 'none';
-erase.style.backgroundColor = '#DDD';
-clear.innerHTML = 'clear';
-clear.style.fontWeight = '700';
-clear.style.width = '100%';
-clear.style.height = '35%';
-clear.style.lineHeight = '35%';
-clear.style.border = '3px solid #333';
-clear.style.borderRadius = '20px';
-clear.style.fontSize = '72px';
-clear.style.fontFamily = 'Capriola';
-clear.style.outline = 'none';
-clear.style.backgroundColor = '#DDD';
-
-erase.onclick = (function() {
-  erase.style.backgroundColor = '#333';
-  erase.style.color = 'white';
-  selected = 'white';
-});
-
-clear.onclick = (function() {
-  var pixels = document.getElementsByClassName('pixels');
-  pixels.style.backgroundColor = 'white';
-});
-
 //codes for pixel boxes
 for (var c = 0; c < columnsGrid; c++) {
   var column = document.createElement('DIV');
@@ -125,6 +86,47 @@ for (var c = 0; c < columnsGrid; c++) {
     }
   grid.appendChild(column);
 }
+
+//codes for buttons
+btns.appendChild(erase);
+btns.appendChild(clear);
+
+erase.innerHTML = 'erase';
+erase.style.fontWeight = '700';
+erase.style.width = '100%';
+erase.style.height = '35%';
+erase.style.lineHeight = '35%';
+erase.style.border = '3px solid #333';
+erase.style.borderRadius = '20px';
+erase.style.margin = '25px 0';
+erase.style.fontSize = '72px';
+erase.style.fontFamily = 'Capriola';
+erase.style.outline = 'none';
+erase.style.backgroundColor = '#DDD';
+clear.innerHTML = 'clear';
+clear.style.fontWeight = '700';
+clear.style.width = '100%';
+clear.style.height = '35%';
+clear.style.lineHeight = '35%';
+clear.style.border = '3px solid #333';
+clear.style.borderRadius = '20px';
+clear.style.fontSize = '72px';
+clear.style.fontFamily = 'Capriola';
+clear.style.outline = 'none';
+clear.style.backgroundColor = '#DDD';
+
+erase.onclick = (function() {
+  erase.style.backgroundColor = '#333';
+  erase.style.color = 'white';
+  selected = 'white';
+});
+
+clear.onclick = (function() {
+  var pixels = document.querySelectorAll('.pixels');
+  for (var i = 0; i < pixels.length; i++) {
+     pixels[i].style.backgroundColor = 'white';
+  }
+});
 
 //codes for color box
 border.appendChild(colors);
