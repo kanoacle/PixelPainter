@@ -15,6 +15,7 @@ var btnSel;
 var erase = document.createElement('BUTTON');
 var clear = document.createElement('BUTTON');
 var title = document.getElementById('hdr');
+var click = false;
 
 //color selection arrays
 var colorSelection = ['#000000', '#424242', '#666666', '#919191', '#c1c1c1', '#e0e0e0', '#bc0000', '#bc6a00', '#bc9c00', '#10a000', '#0007a0', '#7200a0', '#e00000', '#e08e00', '#ffd800', '#00bf16', '#1600e2', '#a100e2', '#ff2323', '#ffaa22', '#ffdc30', '#3bff14', '#1160ff', '#cb11ff', '#ff2b2b', '#ffc526', '#fffa00', '#75ff85', '#4c9fff', '#da59ff'];
@@ -83,7 +84,10 @@ erase.onclick = (function() {
   selected = 'white';
 });
 
-
+clear.onclick = (function() {
+  var pixels = document.getElementsByClassName('pixels');
+  pixels.style.backgroundColor = 'white';
+});
 
 //codes for pixel boxes
 for (var c = 0; c < columnsGrid; c++) {
@@ -102,9 +106,19 @@ for (var c = 0; c < columnsGrid; c++) {
       btn.style.height = '4%';
       btn.style.border = '1px solid #333';
       btn.style.display = 'table-col';
-      btn.onclick = (function( event ) {
+      btn.onmousedown = (function( event ) {
+          click = true;
           btnSel = event.srcElement;
           btnSel.style.backgroundColor = selected;
+      });
+      btn.onmouseup = (function( event ) {
+          click = false;
+      });
+      btn.onmouseover = (function( event ) {
+          if (click === true) {
+            btnSel = event.srcElement;
+            btnSel.style.backgroundColor = selected;
+          }
       });
       column.appendChild(btn);
       i++;
