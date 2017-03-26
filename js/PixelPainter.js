@@ -9,8 +9,8 @@ var table = document.createElement('TABLE');
 var gridNum = 100;
 var selected;
 var colorNum = 30;
-var columnsGrid = 50;
-var pixelNum = 50;
+var columnsGrid = 25;
+var pixelNum = 25;
 var btnSel;
 var erase = document.createElement('BUTTON');
 var clear = document.createElement('BUTTON');
@@ -21,14 +21,14 @@ var click = false;
 var colorSelection = ['#000000', '#424242', '#666666', '#919191', '#c1c1c1', 'e0e0e0', '#bc0000', '#bc6a00', '#bc9c00', '#10a000', '#0007a0', '#7200a0', '#e00000', '#e08e00', '#ffd800', '#00bf16', '#1600e2', '#a100e2', '#ff2323', '#ffaa22', '#ffdc30', '#3bff14', '#1160ff', '#cb11ff', '#ff2b2b', '#ffc526', '#fffa00', '#75ff85', '#4c9fff', '#da59ff'];
 
 //codes for border box
+document.body.style.backgroundImage = 'url(./woodgrain.jpg)';
 border.onload = (function() {
   border.style.border = '3px solid #333';
-  border.style.borderRadius = '15px';
   border.style.width = '70%';
   border.style.height = '75%';
-  border.style.margin = '0px auto';
+  border.style.margin = '0 auto';
   border.style.display = 'border-box';
-  border.style.backgroundImage = 'url(./woodgrain.jpg)';
+  border.style.backgroundColor = '#C8A48A';
 })();
 
 //codes for color boxes
@@ -55,7 +55,7 @@ for (var c = 0; c < colorNum; c++) {
 for (var c = 0; c < columnsGrid; c++) {
   var column = document.createElement('DIV');
     column.id = 'column' + c;
-    column.style.width = '2%';
+    column.style.width = '4%';
     column.style.minHeight = '100%';
     column.style.display = 'inline-block';
     var i = 0;
@@ -64,7 +64,7 @@ for (var c = 0; c < columnsGrid; c++) {
       btn.id = `${column.id}` + 'btn' + i;
       btn.className = 'pixels';
       btn.style.width = '100%';
-      btn.style.height = '2%';
+      btn.style.height = '4%';
       btn.style.border = '1px solid #bababa';
       btn.style.display = 'table-col';
       btn.style.backgroundColor = 'white';
@@ -98,7 +98,6 @@ erase.style.width = '100%';
 erase.style.height = '35%';
 erase.style.lineHeight = '35%';
 erase.style.border = '3px solid #333';
-erase.style.borderRadius = '20px';
 erase.style.margin = '25px 0';
 erase.style.fontSize = '48px';
 erase.style.fontFamily = 'Capriola';
@@ -110,7 +109,6 @@ clear.style.width = '100%';
 clear.style.height = '35%';
 clear.style.lineHeight = '35%';
 clear.style.border = '3px solid #333';
-clear.style.borderRadius = '20px';
 clear.style.fontSize = '48px';
 clear.style.fontFamily = 'Capriola';
 clear.style.outline = 'none';
@@ -171,3 +169,6 @@ btns.onload = (function() {
 title.style.fontFamily = "Capriola";
 title.style.fontSize = '72px';
 title.style.textAlign = 'center';
+title.style.marginTop = '25px';
+title.style.marginBottom = '25px';
+title.style.color = '#222';
