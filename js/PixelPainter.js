@@ -11,8 +11,10 @@ var selected;
 var colorNum = 30;
 var columnsGrid = 25;
 var pixelNum = 25;
-var pixels = document.querySelectorAll('.pixels');
 var btnSel;
+var erase = document.createElement('BUTTON');
+var clear = document.createElement('BUTTON');
+var title = document.getElementById('hdr');
 
 //color selection arrays
 var colorSelection = ['#000000', '#424242', '#666666', '#919191', '#c1c1c1', '#e0e0e0', '#bc0000', '#bc6a00', '#bc9c00', '#10a000', '#0007a0', '#7200a0', '#e00000', '#e08e00', '#ffd800', '#00bf16', '#1600e2', '#a100e2', '#ff2323', '#ffaa22', '#ffdc30', '#3bff14', '#1160ff', '#cb11ff', '#ff2b2b', '#ffc526', '#fffa00', '#75ff85', '#4c9fff', '#da59ff'];
@@ -23,7 +25,7 @@ border.onload = (function() {
   border.style.borderRadius = '15px';
   border.style.width = '70%';
   border.style.height = '75%';
-  border.style.margin = '0 auto';
+  border.style.margin = '0px auto';
   border.style.display = 'border-box';
 })();
 
@@ -41,9 +43,45 @@ for (var c = 0; c < colorNum; c++) {
   color.onclick = (function() {
     btnSel = event.srcElement;
     selected = btnSel.style.backgroundColor;
+    erase.style.backgroundColor = '#DDD';
+    erase.style.color = 'black';
   });
   colors.appendChild(color);
 }
+
+//codes for buttons
+btns.appendChild(erase);
+btns.appendChild(clear);
+
+erase.innerHTML = 'erase';
+erase.style.fontWeight = '700';
+erase.style.width = '100%';
+erase.style.height = '35%';
+erase.style.lineHeight = '35%';
+erase.style.border = '3px solid #333';
+erase.style.borderRadius = '20px';
+erase.style.margin = '25px 0';
+erase.style.fontSize = '72px';
+erase.style.fontFamily = 'Capriola';
+erase.style.outline = 'none';
+erase.style.backgroundColor = '#DDD';
+clear.innerHTML = 'clear';
+clear.style.fontWeight = '700';
+clear.style.width = '100%';
+clear.style.height = '35%';
+clear.style.lineHeight = '35%';
+clear.style.border = '3px solid #333';
+clear.style.borderRadius = '20px';
+clear.style.fontSize = '72px';
+clear.style.fontFamily = 'Capriola';
+clear.style.outline = 'none';
+clear.style.backgroundColor = '#DDD';
+
+erase.onclick = (function() {
+  erase.style.backgroundColor = '#333';
+  erase.style.color = 'white';
+  selected = 'white';
+});
 
 
 
@@ -102,7 +140,6 @@ grid.onload = (function() {
 border.appendChild(btns);
 
 btns.onload = (function() {
-  btns.style.border = '3px solid #333';
   btns.style.width = '35%';
   btns.style.height = '37%';
   btns.style.float = 'left';
@@ -110,3 +147,8 @@ btns.onload = (function() {
   btns.style.left = '5%';
   btns.style.top = '12%';
 })();
+
+//header styling
+title.style.fontFamily = "Capriola";
+title.style.fontSize = '72px';
+title.style.textAlign = 'center';
