@@ -126,7 +126,9 @@ erase.onclick = (function() {
 clear.onclick = (function() {
   var pixels = document.querySelectorAll('.pixels');
   for (var i = 0; i < pixels.length; i++) {
-     pixels[i].style.backgroundColor = 'white';
+    pixels[i].style.backgroundColor = 'white';
+    erase.style.backgroundColor = '#fff';
+    erase.style.color = 'black';
   }
 });
 
