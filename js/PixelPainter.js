@@ -57,7 +57,6 @@ for (var c = 0; c < columnsGrid; c++) {
     column.id = 'column' + c;
     column.style.width = '2%';
     column.style.minHeight = '100%';
-    column.style.border = '1px solid #333';
     column.style.display = 'inline-block';
     var i = 0;
     while (i < pixelNum) {
@@ -66,7 +65,7 @@ for (var c = 0; c < columnsGrid; c++) {
       btn.className = 'pixels';
       btn.style.width = '100%';
       btn.style.height = '2%';
-      btn.style.border = '1px solid #333';
+      btn.style.border = '1px solid #bababa';
       btn.style.display = 'table-col';
       btn.style.backgroundColor = 'white';
       btn.onmousedown = (function( event ) {
