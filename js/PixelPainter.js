@@ -28,6 +28,7 @@ border.onload = (function() {
   border.style.height = '75%';
   border.style.margin = '0px auto';
   border.style.display = 'border-box';
+  border.style.backgroundImage = 'url(./woodgrain.jpg)';
 })();
 
 //codes for color boxes
@@ -44,7 +45,7 @@ for (var c = 0; c < colorNum; c++) {
   color.onclick = (function() {
     btnSel = event.srcElement;
     selected = btnSel.style.backgroundColor;
-    erase.style.backgroundColor = '#DDD';
+    erase.style.backgroundColor = '#fff';
     erase.style.color = 'black';
   });
   colors.appendChild(color);
@@ -67,6 +68,7 @@ for (var c = 0; c < columnsGrid; c++) {
       btn.style.height = '4%';
       btn.style.border = '1px solid #333';
       btn.style.display = 'table-col';
+      btn.style.backgroundColor = 'white';
       btn.onmousedown = (function( event ) {
           click = true;
           btnSel = event.srcElement;
@@ -102,7 +104,7 @@ erase.style.margin = '25px 0';
 erase.style.fontSize = '72px';
 erase.style.fontFamily = 'Capriola';
 erase.style.outline = 'none';
-erase.style.backgroundColor = '#DDD';
+erase.style.backgroundColor = '#fff';
 clear.innerHTML = 'clear';
 clear.style.fontWeight = '700';
 clear.style.width = '100%';
@@ -113,7 +115,7 @@ clear.style.borderRadius = '20px';
 clear.style.fontSize = '72px';
 clear.style.fontFamily = 'Capriola';
 clear.style.outline = 'none';
-clear.style.backgroundColor = '#DDD';
+clear.style.backgroundColor = '#fff';
 
 erase.onclick = (function() {
   erase.style.backgroundColor = '#333';
