@@ -173,7 +173,7 @@ h1 {
   }
   .colors{
     height: 15%;
-    width: 14%;
+    width: 13%;
   }
   #btnBox {
     width: 35%;
@@ -181,16 +181,16 @@ h1 {
     padding: 1%;
   }
   #ers {
-    font-size: 14px;
+    font-size: 12px;
     width: 48%;
     margin: 1%;
   }
   #clr {
-    font-size: 14px;
+    font-size: 12px;
     margin-top: 1%;
   }
   #grid {
-    font-size: 14px;
+    font-size: 12px;
     width: 48%;
     margin: 1%;
   }
