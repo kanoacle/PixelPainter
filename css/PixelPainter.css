@@ -42,7 +42,6 @@ h1 {
 #btnBox {
   width: 35%;
   height: 37%;
-
 }
 
 #ers {
@@ -116,6 +115,10 @@ h1 {
 }
 
 @media (min-width: 376px) and (max-width: 768px) {
+  h1 {
+  margin-top: 25px;
+  margin-bottom: 20px;
+  }
   #brdr {
     flex-direction: row;
     align-items: flex-start;
@@ -146,12 +149,17 @@ h1 {
 }
 
 @media screen and (max-width: 375px) {
+  h1 {
+  font-size: 42px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  }
   #brdr {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: flex-end;
     justify-content: center;
-    width: 95%;
-    height: 75%;
+    width: 99%;
+    height: 70%;
   }
   #grd {
     order: -1;
@@ -160,24 +168,30 @@ h1 {
     margin-top: 5%;
   }
   #clrs {
-    margin-right: 5%;
-    margin-top: 7.5%;
+    width: 60%;
+    height: 40%;
   }
   .colors{
-    height: 10%;
+    height: 15%;
+    width: 14%;
+  }
+  #btnBox {
+    width: 35%;
+    height: 37%;
+    padding: 1%;
   }
   #ers {
-    font-size: 16px;
-    width: 50%;
-    margin: 0;
-    margin-top: 25px;
+    font-size: 14px;
+    width: 48%;
+    margin: 1%;
   }
   #clr {
-    font-size: 16px;
+    font-size: 14px;
+    margin-top: 1%;
   }
   #grid {
-    font-size: 16px;
-    width: 50%;
-    margin: 0;
+    font-size: 14px;
+    width: 48%;
+    margin: 1%;
   }
 }
