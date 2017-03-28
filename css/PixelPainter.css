@@ -159,7 +159,7 @@ h1 {
     align-items: flex-end;
     justify-content: center;
     width: 99%;
-    height: 70%;
+    height: 75%;
   }
   #grd {
     order: -1;
@@ -181,16 +181,16 @@ h1 {
     padding: 1%;
   }
   #ers {
-    font-size: 12px;
+    font-size: 10px;
     width: 48%;
     margin: 1%;
   }
   #clr {
-    font-size: 12px;
+    font-size: 10px;
     margin-top: 1%;
   }
   #grid {
-    font-size: 12px;
+    font-size: 10px;
     width: 48%;
     margin: 1%;
   }
