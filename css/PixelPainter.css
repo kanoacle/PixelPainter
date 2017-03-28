@@ -16,58 +16,33 @@ h1 {
   width: 70%;
   height: 75%;
   margin: 0 auto;
-  display: border-box;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
   background-color: #C8A48A;
-}
-
-.columns {
-  width: 4%;
-  min-height: 100%;
-  display: inline-block;
-}
-
-.pixels {
-  width: 100%;
-  height: 4%;
-  border: 1px solid #bababa;
-  background-color: white;
 }
 
 #clrs {
   width: 35%;
   height: 43%;
-  float: left;
-  position: relative;
-  left: 5%;
-  top: 7%;
+  margin-bottom: 2.5%;
+
 }
 
 .colors{
   width: 14%;
-  min-height: 18%;
+  height: 18%;
   margin: 1.25%;
   border: 3px solid #111;
   border-radius: 25px;
   display: inline-block;
 }
 
-#grd {
-  border: 3px solid #333;
-  width: 50%;
-  height: 85%;
-  position: relative;
-  top: 7%;
-  right: 5%;
-  float: right;
-}
-
 #btnBox {
   width: 35%;
   height: 37%;
-  float: left;
-  position: relative;
-  left: 5%;
-  top: 12%;
+
 }
 
 #ers {
@@ -106,4 +81,103 @@ h1 {
   font-family: 'Capriola';
   outline: none;
   background-color: #fff;
+}
+
+#grd {
+  border: 3px solid #333;
+  width: 50%;
+  height: 85%;
+
+}
+
+.columns {
+  width: 4%;
+  min-height: 100%;
+  display: inline-block;
+}
+
+.pixels {
+  width: 100%;
+  height: 4%;
+  border: 1px solid #bababa;
+  background-color: white;
+}
+
+@media (min-width: 769px) and  (max-width: 1030px) {
+  #ers {
+    font-size: 24px;
+  }
+  #clr {
+    font-size: 24px;
+  }
+  #grid {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 768px) {
+  #brdr {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  #grd {
+    order: -1;
+    width: 85%;
+    height: 60%;
+    margin-top: 5%;
+  }
+  #clrs {
+    margin-right: 5%;
+    margin-top: 7.5%;
+  }
+  .colors{
+    height: 10%;
+  }
+  #ers {
+    font-size: 24px;
+  }
+  #clr {
+    font-size: 24px;
+  }
+  #grid {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #brdr {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    width: 95%;
+    height: 75%;
+  }
+  #grd {
+    order: -1;
+    width: 85%;
+    height: 60%;
+    margin-top: 5%;
+  }
+  #clrs {
+    margin-right: 5%;
+    margin-top: 7.5%;
+  }
+  .colors{
+    height: 10%;
+  }
+  #ers {
+    font-size: 16px;
+    width: 50%;
+    margin: 0;
+    margin-top: 25px;
+  }
+  #clr {
+    font-size: 16px;
+  }
+  #grid {
+    font-size: 16px;
+    width: 50%;
+    margin: 0;
+  }
 }

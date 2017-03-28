@@ -26,6 +26,13 @@ border.onload = (function() {
   border.id = 'brdr';
 })();
 
+//codes for color box
+border.appendChild(colors);
+
+colors.onload = (function() {
+  colors.id = 'clrs';
+})();
+
 //codes for color boxes
 for (var c = 0; c < colorNum; c++) {
   var color = document.createElement('DIV');
@@ -41,35 +48,12 @@ for (var c = 0; c < colorNum; c++) {
   colors.appendChild(color);
 }
 
-//codes for pixel boxes
-for (var c = 0; c < columnsGrid; c++) {
-  var column = document.createElement('DIV');
-    column.id = 'column' + c;
-    column.className = 'columns';
-    var i = 0;
-    while (i < pixelNum) {
-      var btn = document.createElement('DIV');
-      btn.id = `${column.id}` + 'btn' + i;
-      btn.className = 'pixels';
-      btn.onmousedown = (function( event ) {
-          click = true;
-          btnSel = event.srcElement;
-          btnSel.style.backgroundColor = selected;
-      });
-      btn.onmouseup = (function( event ) {
-          click = false;
-      });
-      btn.onmouseover = (function( event ) {
-          if (click === true) {
-            btnSel = event.srcElement;
-            btnSel.style.backgroundColor = selected;
-          }
-      });
-      column.appendChild(btn);
-      i++;
-    }
-  grid.appendChild(column);
-}
+//codes for button box
+border.appendChild(btns);
+
+btns.onload = (function() {
+  btns.id = 'btnBox';
+})();
 
 //codes for buttons
 btns.appendChild(erase);
@@ -110,22 +94,38 @@ clear.onclick = (function() {
   }
 });
 
-//codes for color box
-border.appendChild(colors);
-
-colors.onload = (function() {
-  colors.id = 'clrs';
-})();
 //codes for grid box
 border.appendChild(grid);
-
 grid.onload = (function() {
   grid.id = 'grd';
 })();
 
-//codes for button box
-border.appendChild(btns);
-
-btns.onload = (function() {
-  btns.id = 'btnBox';
-})();
+//codes for pixel boxes
+for (var c = 0; c < columnsGrid; c++) {
+  var column = document.createElement('DIV');
+    column.id = 'column' + c;
+    column.className = 'columns';
+    var i = 0;
+    while (i < pixelNum) {
+      var btn = document.createElement('DIV');
+      btn.id = `${column.id}` + 'btn' + i;
+      btn.className = 'pixels';
+      btn.onmousedown = (function( event ) {
+          click = true;
+          btnSel = event.srcElement;
+          btnSel.style.backgroundColor = selected;
+      });
+      btn.onmouseup = (function( event ) {
+          click = false;
+      });
+      btn.onmouseover = (function( event ) {
+          if (click === true) {
+            btnSel = event.srcElement;
+            btnSel.style.backgroundColor = selected;
+          }
+      });
+      column.appendChild(btn);
+      i++;
+    }
+  grid.appendChild(column);
+}
