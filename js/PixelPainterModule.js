@@ -1,6 +1,6 @@
 /* jshint esversion: 6 */
 
-var pixelPaint = (function(gridSize, color) {
+var pixelPaint = (function() {
 
 //creating elements
   var selected;
@@ -10,28 +10,10 @@ var pixelPaint = (function(gridSize, color) {
   var btnSel;
   var click = false;
   var colorSelection = ['#000000', '#424242', '#666666', '#919191', '#c1c1c1', 'e0e0e0', '#bc0000', '#bc6a00', '#bc9c00', '#10a000', '#0007a0', '#7200a0', '#e00000', '#e08e00', '#ffd800', '#00bf16', '#1600e2', '#a100e2', '#ff2323', '#ffaa22', '#ffdc30', '#3bff14', '#1160ff', '#cb11ff', '#ff2b2b', '#ffc526', '#fffa00', '#75ff85', '#4c9fff', '#da59ff'];
+  var module = {};
 
-//methods for access
-function setGrid() {
-  columnsGrid = gridSize;
-  pixelNum = gridSize;
-}
-
-function setColors() {
-  if (typeof (color) === array) {
-    for (var i = 0; i < color.length; i++) {
-      if (typeof (color[i]) === 'string') {
-        colorSelection = color;
-      } else {
-        return;
-      }
-    }
-  } else {
-    return;
-  }
-}
 //codes for border box
-  function bckGrnd() {
+  module.bckGrnd = function() {
 
     var border = document.getElementById('pixelPainter');
 
@@ -39,10 +21,10 @@ function setColors() {
     border.onload = (function() {
       border.id = 'brdr';
     })();
-  }
+  };
 
 //codes for color boxes
-  function loadColors() {
+  module.loadColors = function() {
 
     var colors = document.createElement('DIV');
 
@@ -59,10 +41,10 @@ function setColors() {
       });
       colors.appendChild(color);
     }
-  }
+  };
 
 //codes for pixel boxes
-  function loadGrid() {
+  module.loadGrid = function() {
 
     var grid = document.createElement('DIV');
 
@@ -94,10 +76,10 @@ function setColors() {
         }
       grid.appendChild(column);
     }
-  }
+  };
 
 //codes for buttons
-  function loadBtns() {
+  module.loadBtns = function() {
 
     var btns = document.createElement('DIV');
     var erase = document.createElement('BUTTON');
@@ -140,10 +122,10 @@ function setColors() {
         erase.style.color = 'black';
       }
     });
-  }
+  };
 
 //codes for color box
-  function colorLoad() {
+  module.colorLoad = function() {
 
     border.appendChild(colors);
 
@@ -163,17 +145,11 @@ function setColors() {
     btns.onload = (function() {
       btns.id = 'btnBox';
     })();
-  }
-
-//returned object
-  return {
-    setGrid: setGrid,
-    setColors: setColors,
-    bckGrnd: bckGrnd,
-    loadColors: loadColors,
-    loadGrid: loadGrid,
-    loadBtns: loadBtns,
-    colorLoad: colorLoad
   };
 
+//returned object
+  return module;
+
 })();
+var pixelPainter = pixelPaint();
+console.log(pixelPainter.colorNum);
